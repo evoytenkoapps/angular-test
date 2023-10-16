@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
 import { BehaviorSubject, of } from 'rxjs';
 
 @Component({
@@ -9,7 +9,10 @@ import { BehaviorSubject, of } from 'rxjs';
 export class AppComponent implements AfterViewInit {
   data = new BehaviorSubject('test-app');
 
+  constructor(private changeDetectorRef: ChangeDetectorRef) {}
+
   ngAfterViewInit(): void {
     this.data.next('changed rx');
+    // this.changeDetectorRef.detectChanges();
   }
 }
