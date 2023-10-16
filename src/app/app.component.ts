@@ -1,4 +1,5 @@
 import { AfterViewInit, Component } from '@angular/core';
+import { BehaviorSubject, of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,9 @@ import { AfterViewInit, Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements AfterViewInit {
-  data = 'test-app';
+  data = new BehaviorSubject('test-app');
 
   ngAfterViewInit(): void {
-    this.data = 'changed';
+    this.data.next('changed rx');
   }
 }
