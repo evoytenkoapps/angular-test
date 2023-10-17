@@ -19,7 +19,7 @@ export class AppComponent implements AfterViewInit {
   constructor(private changeDetectorRef: ChangeDetectorRef) {}
 
   ngAfterViewInit(): void {
-    // this.data.next('changed rx');
+    this.data$.next('changed rx');
     // this.changeDetectorRef.detectChanges();
     this.data = 'changed';
   }
