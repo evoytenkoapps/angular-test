@@ -13,14 +13,11 @@ import { BehaviorSubject } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TwoComponent implements AfterViewInit {
-  data = 'test-app';
   data$ = new BehaviorSubject('test-app');
 
-  constructor(private changeDetectorRef: ChangeDetectorRef) {}
+  constructor() {}
 
   ngAfterViewInit(): void {
-    // this.changeDetectorRef.detectChanges();
-    this.data = 'changed';
     this.data$.next('changed rx');
   }
 }
