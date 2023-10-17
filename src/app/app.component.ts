@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   Component,
 } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,11 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements AfterViewInit {
+  data$ = new BehaviorSubject('root-app');
+
   constructor() {}
 
-  ngAfterViewInit(): void {}
+  ngAfterViewInit(): void {
+    this.data$.next('changed rx');
+  }
 }
