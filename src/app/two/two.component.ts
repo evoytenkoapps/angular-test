@@ -12,7 +12,7 @@ import { BehaviorSubject } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TwoComponent implements AfterViewInit {
-  data$ = new BehaviorSubject('test-app');
+  data$ = new BehaviorSubject('two-app');
 
   constructor() {}
 

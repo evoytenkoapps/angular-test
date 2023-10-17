@@ -11,7 +11,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OneComponent implements AfterViewInit {
-  data = 'test-app';
+  data = 'one-app';
 
   constructor() {}
 
